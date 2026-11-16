@@ -10,6 +10,9 @@ class PricingTest(unittest.TestCase):
     def test_discount(self):
         self.assertEqual(apply_discount(100, 10), 90)
 
+    def test_discount_is_capped(self):
+        self.assertEqual(apply_discount(100, 80), 50)
+
 
 if __name__ == "__main__":
     unittest.main()
